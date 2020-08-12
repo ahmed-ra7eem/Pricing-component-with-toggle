@@ -1,0 +1,207 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    background-image: url("../images/bg-top.svg"), url("../images/bg-bottom.svg");
+    background-position: top right, left bottom;
+    background-repeat: no-repeat;
+    max-width: 1440px;
+    position: relative;
+    height: 100vh;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: "Montserrat";
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    margin: 40px auto 40px auto;
+    text-align: center;
+}
+
+h1 {
+    color: hsl(234, 13%, 49%);
+}
+
+.annual-month {
+    margin: 35px auto 60px auto;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsl(234, 14%, 74%);
+}
+
+.annual-month span {
+    margin: 30px;
+}
+
+.bt-switch {
+    background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    width: 50px;
+    height: 25px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.bt-switch::before {
+    content: '';
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    border-radius: 12.5px;
+    top: 0;
+    left: 25px;
+    transform: scale(.8);
+    transition: all .3s ease-in-out;
+}
+
+.bt-switch.active::before{
+    left: 0;
+}
+
+.bt-switch:active {
+    background: hsl(236, 72%, 79%);
+}
+
+.pricing-cards {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 250px;
+    padding: 20px;
+    background: hsl(240, 78%, 98%);
+    color: hsl(233, 13%, 49%);
+    border-radius: 10px;
+}
+
+.card h3{
+    margin: 30px 0;
+}
+
+.price {
+    margin: 20px auto;
+    font-size: 25px;
+    font-weight: bold;
+    color: hsl(232, 13%, 33%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price span {
+    font-size: 50px;
+}
+
+.card ul {
+    list-style: none;
+    margin: 20px;
+}
+
+.card ul li {
+    padding: 10px 30px;
+    border-top: 1px solid hsl(234, 14%, 74%);
+}
+
+.card ul li:last-child {
+    border-bottom: 1px solid hsl(234, 14%, 74%);
+}
+
+.card a,
+.card a:visited,
+.card a:hover {
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    width: 180px;
+    height: 15px;
+    padding: 15px;
+    margin: 0 auto;
+    border: 1px solid;
+    border-radius: 5px;
+    color: hsl(240, 78%, 98%);
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.card a:active {
+    background: hsl(236, 72%, 79%);
+}
+
+div.left {
+    border-radius: 10px 0 0 10px;
+}
+
+div.right {
+    border-radius: 0 10px 10px 0;
+}
+
+div.principal {
+    width: 240px;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: hsl(240, 78%, 98%);
+}
+
+div.principal .price {
+    color: hsl(240, 78%, 98%);
+}
+
+div.principal ul li {
+    padding: 10px 30px;
+    border-top: 1px solid hsl(240, 78%, 98%);
+}
+
+div.principal a,
+div.principal a:hover,
+div.principal a:visited {
+    background: hsl(240, 78%, 98%);
+    color: hsl(237, 63%, 64%);
+    border: 1px solid transparent;
+}
+
+div.principal a:active {
+    background: transparent;
+    border-color: hsl(240, 78%, 98%);
+    color: hsl(240, 78%, 98%)
+}
+
+@media screen and (max-width:880px) {
+    body {
+        background-image: url("../images/bg-top.svg");
+        background-position: top right;
+        background-repeat: no-repeat;
+    }
+    .pricing-cards {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+    div.principal {
+        padding: 20px;
+        width: 250px;
+    }
+    .card,
+    div.left,
+    div.right {
+        border-radius: 10px;
+        margin: 15px;
+    }
+}
